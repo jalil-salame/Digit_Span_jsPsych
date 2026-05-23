@@ -14,6 +14,10 @@ body {
     font-size: 100px
 }
 
+.treatment-red-numbers {
+    color: #E00000
+}
+
 .correct {
     color: green
 }

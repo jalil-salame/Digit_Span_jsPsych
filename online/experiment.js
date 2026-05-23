@@ -16,6 +16,7 @@ Github:https://github.com/vekteo/Digit_Span_JSPsych
   let result;
   const images = ["../static/images/instruction_en.gif", "../static/images/instruction_hu.gif"];
   const subjectId = jsPsych.randomization.randomID(15);
+  const treatment = selectTreatment();
 
   /* create trials */
 
@@ -75,6 +76,8 @@ Github:https://github.com/vekteo/Digit_Span_JSPsych
   }
 
   const startNow = {... trialStructure, stimulus: `<h2>${language.practice.end}</h2><p>${language.task.start}</p><p>${language.task.press}</p>`, data: {test_part: "start_task"}, };
+
+  let digitSpanStimuli = digitSpanStimuliForTreatment(treatment);
 
   let levels = [
     digitSpanStimuli.digit3.level1, digitSpanStimuli.digit3.level2, digitSpanStimuli.digit3.level3, digitSpanStimuli.digit3.level4,
@@ -136,7 +139,7 @@ Github:https://github.com/vekteo/Digit_Span_JSPsych
   const practiceBlock2 = { ... timelineElementStructure, timeline_variables: digitSpanStimuli.practice.level2, timeline: [test] }
   const practiceAnswer = { ... timelineElementStructure, timeline_variables: answerInput, timeline: [answer] }
 
-  jsPsych.data.addProperties({subject: subjectId});
+  jsPsych.data.addProperties({subject: subjectId, treatment: treatment});
   timeline.push({type: "fullscreen", fullscreen_mode: true}, instructions, startOfPractice, practiceBlock1, practiceAnswer, feedback1, practiceBlock2, practiceAnswer, feedback2, startNow);
 
   for (i = 0; i < levels.length; i++) {

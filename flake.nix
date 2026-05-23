@@ -1,5 +1,6 @@
 {
-  inputs.nixpkgs = { };
+  inputs.nixpkgs.url = "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz";
+
   outputs =
     inputs:
     let
