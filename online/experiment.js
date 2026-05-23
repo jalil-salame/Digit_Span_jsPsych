@@ -1,4 +1,4 @@
-/* 
+/*
 Created by Teodora Vekony (vekteo@gmail.com)
 MEMO Team (PI: Dezso Nemeth)
 Lyon Neuroscience Research Center
@@ -27,6 +27,12 @@ const trialStructure = {
   type: "html-keyboard-response",
 };
 
+const goNextButton = {
+  type: "survey-html-form",
+  html: "",
+  button_label: language.button.submit,
+};
+
 const instructions = {
   type: "instructions",
   pages: [
@@ -44,19 +50,19 @@ const welcome = {
   stimulus: `<h2>${language.welcomePage.welcome}</h2><h2>${language.welcomePage.clickNext}</h2>`,
 };
 const afterPractice = {
-  ...trialStructure,
-  stimulus: `<p>${language.practice.afterPractice}</p><br><p>${language.practice.startTask}</p>`,
+  ...goNextButton,
+  preamble: `<p>${language.practice.afterPractice}</p><br><p>${language.practice.startTask}</p>`,
   data: { test_part: "start_task" },
 };
 const startOfPractice = {
-  ...trialStructure,
-  stimulus: `<p>${language.practice.practice}</p><p>${language.practice.startPractice}</p>`,
+  ...goNextButton,
+  preamble: `<p>${language.practice.practice}</p><p>${language.practice.startPractice}</p>`,
   data: { test_part: "start_practice" },
 };
 
 const feedback1 = {
-  ...trialStructure,
-  stimulus: `<p>${language.feedback.answerIs}<strong>36</strong></p>`,
+  ...goNextButton,
+  preamble: `<p>${language.feedback.answerIs}<strong>36</strong></p>`,
   data: { test_part: "feedback" },
   on_start: function (trial) {
     let answer = jsPsych.data
@@ -71,8 +77,8 @@ const feedback1 = {
 };
 
 const feedback2 = {
-  ...trialStructure,
-  stimulus: `<p>${language.feedback.answerIs}<strong>47</strong></p>`,
+  ...goNextButton,
+  preamble: `<p>${language.feedback.answerIs}<strong>47</strong></p>`,
   data: { test_part: "feedback" },
   on_start: function (trial) {
     let answer = jsPsych.data
@@ -87,8 +93,9 @@ const feedback2 = {
 };
 
 const endOfTask = {
-  ...trialStructure,
-  stimulus: `<h2>${language.end.end}</h2><br><p>${language.feedback.longestStream2}</p><br><p>${language.end.thankYou}</p>`,
+  ...goNextButton,
+  preamble: `<h2>${language.end.end}</h2><br><p>${language.feedback.longestStream2}</p><br><p>${language.end.thankYou}</p>`,
+  button_label: "Submit test results",
   data: { test_part: "debrief" },
   on_start: function (trial) {
     if (jsPsych.data.get().last(2).values()[0].correct_answer != "295173468") {
@@ -104,8 +111,8 @@ const endOfTask = {
 };
 
 const startNow = {
-  ...trialStructure,
-  stimulus: `<h2>${language.practice.end}</h2><p>${language.task.start}</p><p>${language.task.press}</p>`,
+  ...goNextButton,
+  preamble: `<h2>${language.practice.end}</h2><p>${language.task.start}</p><p>${language.task.press}</p>`,
   data: { test_part: "start_task" },
 };
 
@@ -116,26 +123,32 @@ let levels = [
   digitSpanStimuli.digit3.level2,
   digitSpanStimuli.digit3.level3,
   digitSpanStimuli.digit3.level4,
+
   digitSpanStimuli.digit4.level1,
   digitSpanStimuli.digit4.level2,
   digitSpanStimuli.digit4.level3,
   digitSpanStimuli.digit4.level4,
+
   digitSpanStimuli.digit5.level1,
   digitSpanStimuli.digit5.level2,
   digitSpanStimuli.digit5.level3,
   digitSpanStimuli.digit5.level4,
+
   digitSpanStimuli.digit6.level1,
   digitSpanStimuli.digit6.level2,
   digitSpanStimuli.digit6.level3,
   digitSpanStimuli.digit6.level4,
+
   digitSpanStimuli.digit7.level1,
   digitSpanStimuli.digit7.level2,
   digitSpanStimuli.digit7.level3,
   digitSpanStimuli.digit7.level4,
+
   digitSpanStimuli.digit8.level1,
   digitSpanStimuli.digit8.level2,
   digitSpanStimuli.digit8.level3,
   digitSpanStimuli.digit8.level4,
+
   digitSpanStimuli.digit9.level1,
   digitSpanStimuli.digit9.level2,
   digitSpanStimuli.digit9.level3,
