@@ -1,47 +1,76 @@
 p {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 img {
-    width: 30rem;
+  width: 30rem;
 }
 
 body {
-    background-color: light-gray
+  background-color: light-gray;
 }
 
 #stimulus {
-    font-size: 100px
+  font-size: 100px;
 }
 
-.treatment-red-numbers {
-    color: #E00000
+#stimulus.treatment-red-numbers {
+  color: #a70102; /* A red with good contrast */
+}
+
+/* Rotate each color by 40 degrees to keep a consistent contrast/lightness */
+#stimulus.treatment-colored-numbers.stimulus-1 {
+  color: oklch(from #a70102 l c calc(h + 0 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-2 {
+  color: oklch(from #a70102 l c calc(h + 1 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-3 {
+  color: oklch(from #a70102 l c calc(h + 2 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-4 {
+  color: oklch(from #a70102 l c calc(h + 3 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-5 {
+  color: oklch(from #a70102 l c calc(h + 4 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-6 {
+  color: oklch(from #a70102 l c calc(h + 5 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-7 {
+  color: oklch(from #a70102 l c calc(h + 6 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-8 {
+  color: oklch(from #a70102 l c calc(h + 7 * 40));
+}
+#stimulus.treatment-colored-numbers.stimulus-9 {
+  color: oklch(from #a70102 l c calc(h + 8 * 40));
 }
 
 .correct {
-    color: green
+  color: green;
 }
 
 .wrong {
-    color: red
+  color: red;
 }
 
 .formDiv {
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #startDiv {
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.warning{
-    margin-top: 10%;
+.warning {
+  margin-top: 10%;
 }

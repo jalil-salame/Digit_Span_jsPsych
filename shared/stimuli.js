@@ -1,27 +1,22 @@
-const treatments = ["control", "red-numbers"];
+const treatments = ["control", "red-numbers", "colored-numbers"];
 
 function selectTreatment() {
   return jsPsych.randomization.sampleWithoutReplacement(treatments)[0];
 }
 
 function createStimuli(numbers, numberWithinLevel, level, treatment) {
-  let array = [];
-
-  for (let j = 0; j < level; j++) {
-    for (let i = 0; i < numbers[i].length; i++) {
-      array.push({
-        stimulus: `<h1 id='stimulus' class='treatment-${treatment}'>${numbers[j]}</h1>`,
-        data: {
-          level: level,
-          correct_answer: numbers.join(""),
-          number_within_level: numberWithinLevel,
-          number_within_run: j + 1,
-          is_mistake: 0,
-        },
-      });
-    }
-  }
-  return array;
+  return numbers.map((number, index) => {
+    return {
+      stimulus: `<h1 id='stimulus' class='treatment-${treatment} stimulus-${number}'>${number}</h1>`,
+      data: {
+        level: level,
+        correct_answer: numbers.join(""),
+        number_within_level: numberWithinLevel,
+        number_within_run: index + 1,
+        is_mistake: 0,
+      },
+    };
+  });
 }
 
 let answerInput = { stimulus: "answer", data: {} };
