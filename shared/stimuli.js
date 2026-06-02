@@ -1,4 +1,4 @@
-const treatments = ["control", "red-numbers", "colored-numbers"];
+const treatments = ["control", "red-numbers", "even-odd", "colored-numbers"];
 
 function selectTreatment() {
   return jsPsych.randomization.sampleWithoutReplacement(treatments)[0];

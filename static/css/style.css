@@ -18,6 +18,21 @@ body {
   color: #a70102; /* A red with good contrast */
 }
 
+#stimulus.treatment-even-odd.stimulus-1,
+#stimulus.treatment-even-odd.stimulus-3,
+#stimulus.treatment-even-odd.stimulus-5,
+#stimulus.treatment-even-odd.stimulus-7,
+#stimulus.treatment-even-odd.stimulus-9 {
+  color: oklch(from #a70102 l c calc(h + 0 * 180));
+}
+
+#stimulus.treatment-even-odd.stimulus-2,
+#stimulus.treatment-even-odd.stimulus-4,
+#stimulus.treatment-even-odd.stimulus-6,
+#stimulus.treatment-even-odd.stimulus-8 {
+  color: oklch(from #a70102 l c calc(h + 1 * 180));
+}
+
 /* Rotate each color by 40 degrees to keep a consistent contrast/lightness */
 #stimulus.treatment-colored-numbers.stimulus-1 {
   color: oklch(from #a70102 l c calc(h + 0 * 40));
