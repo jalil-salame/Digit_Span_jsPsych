@@ -20,36 +20,6 @@ function createStimuli(numbers, numberWithinLevel, level, treatment) {
   });
 }
 
-function keypadOnClicked(input, digit) {
-  return function () {
-    input.value += digit;
-  };
-}
-
-function createKeyPad(treatment) {
-  let buttons = "";
-  for (let i = 1; i <= 9; i += 1) {
-    buttons += `<input name="digit-${i}" id="button-digit-${i}" class="treatment-${treatment} digit-${i}" type="button" value="${i}" accesskey="${i}"/>`;
-  }
-  return {
-    html: `
-    <input name="answer" type="text" id="input" required/>
-    <div class="input">
-      <div class="keypad">
-        ${buttons}
-      </div>
-    </div>
-    `,
-    // setup event listeners
-    on_load: function () {
-      let input = document.getElementById("input");
-      for (let i = 1; i <= 9; i += 1) {
-        let button = document.getElementById(`button-digit-${i}`);
-        button.addEventListener("click", keypadOnClicked(input, `${i}`));
-      }
-    },
-  };
-}
 
 let answerInput = { stimulus: "answer", data: {} };
 
