@@ -20,7 +20,11 @@ div.keypad {
   padding: 1ch 1ch 1ch 1ch;
   display: grid;
   gap: 0.5ch;
-  grid-template-columns: 3ch 3ch 3ch;
+  grid-template-columns: 3em 3em 3em;
+}
+
+input[type="button"] {
+  font-size: 1.5em;
 }
 
 #stimulus {
@@ -47,30 +51,48 @@ div.keypad {
 }
 
 /* Rotate each color by 40 degrees to keep a consistent contrast/lightness */
+input.treatment-colored-keys.digit-1,
+#stimulus.treatment-colored-keys.digit-1,
 #stimulus.treatment-colored-numbers.digit-1 {
   color: oklch(from #a70102 l c calc(h + 0 * 40));
 }
+input.treatment-colored-keys.digit-2,
+#stimulus.treatment-colored-keys.digit-2,
 #stimulus.treatment-colored-numbers.digit-2 {
   color: oklch(from #a70102 l c calc(h + 1 * 40));
 }
+input.treatment-colored-keys.digit-3,
+#stimulus.treatment-colored-keys.digit-3,
 #stimulus.treatment-colored-numbers.digit-3 {
   color: oklch(from #a70102 l c calc(h + 2 * 40));
 }
+input.treatment-colored-keys.digit-4,
+#stimulus.treatment-colored-keys.digit-4,
 #stimulus.treatment-colored-numbers.digit-4 {
   color: oklch(from #a70102 l c calc(h + 3 * 40));
 }
+input.treatment-colored-keys.digit-5,
+#stimulus.treatment-colored-keys.digit-5,
 #stimulus.treatment-colored-numbers.digit-5 {
   color: oklch(from #a70102 l c calc(h + 4 * 40));
 }
+input.treatment-colored-keys.digit-6,
+#stimulus.treatment-colored-keys.digit-6,
 #stimulus.treatment-colored-numbers.digit-6 {
   color: oklch(from #a70102 l c calc(h + 5 * 40));
 }
+input.treatment-colored-keys.digit-7,
+#stimulus.treatment-colored-keys.digit-7,
 #stimulus.treatment-colored-numbers.digit-7 {
   color: oklch(from #a70102 l c calc(h + 6 * 40));
 }
+input.treatment-colored-keys.digit-8,
+#stimulus.treatment-colored-keys.digit-8,
 #stimulus.treatment-colored-numbers.digit-8 {
   color: oklch(from #a70102 l c calc(h + 7 * 40));
 }
+input.treatment-colored-keys.digit-9,
+#stimulus.treatment-colored-keys.digit-9,
 #stimulus.treatment-colored-numbers.digit-9 {
   color: oklch(from #a70102 l c calc(h + 8 * 40));
 }
