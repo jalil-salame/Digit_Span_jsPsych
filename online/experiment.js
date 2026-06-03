@@ -98,8 +98,9 @@ const endOfTask = {
   button_label: "Submit test results",
   data: { test_part: "debrief" },
   on_start: function (trial) {
-    if (jsPsych.data.get().last(2).values()[0].correct_answer != "295173468") {
-      result = jsPsych.data.get().last(2).values()[0].level - 1;
+    let lastTrial = jsPsych.data.get().last(4).values()[0];
+    if (lastTrial.correct_answer != "295173468") {
+      result = lastTrial.level - 1;
     } else {
       result = 9;
     }
