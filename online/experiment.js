@@ -157,14 +157,11 @@ let levels = [
 ];
 
 const answer = {
+  ...createKeyPad(treatment),
   type: "survey-html-form",
   preamble: `<p>${language.task.whatNumbers}</p><p>${language.task.enter}</p>`,
-  html: '<p><input name="answer" type="text" id="input" required/></p>',
   button_label: `${language.button.submit}`,
   data: { test_part: "answer" },
-  on_load: function () {
-    document.getElementById("input").focus();
-  },
 };
 
 const test = {
